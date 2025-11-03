@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="relative max-w-5xl mx-auto px-6">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-emerald-300 drop-shadow-[0_0_15px_rgba(0,255,163,0.35)]">Contact</h2>
-          <p className="mt-2 text-white/70">Reach out to collaborate or discuss your next project.</p>
+          <p className="mt-2 text-white/70">Reach out to collaborate or discuss intelligent automation.</p>
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -65,12 +65,18 @@ export default function Contact() {
           >
             <p className="text-white/80">Prefer social?</p>
             <div className="mt-4 flex items-center gap-4">
-              <a href="https://github.com" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
+              <a href="https://github.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
                 <Github className="h-5 w-5" /> GitHub
               </a>
-              <a href="https://linkedin.com" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
+              <a href="https://linkedin.com/in/ruchirhuchgol" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
                 <Linkedin className="h-5 w-5" /> LinkedIn
               </a>
+              <a href="mailto:ruchirhuchgol27@gmail.com" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
+                <Mail className="h-5 w-5" /> Email
+              </a>
+            </div>
+            <div className="mt-6 text-sm text-white/60">
+              Pune, India • ruchirhuchgol27@gmail.com
             </div>
           </motion.div>
         </div>

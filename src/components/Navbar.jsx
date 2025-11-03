@@ -1,8 +1,15 @@
-import { useState } from 'react';
-import { Menu, X, Rocket, FolderGit2, Mail, User } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Menu, X, Rocket, FolderGit2, Mail, User, Moon, Sun } from 'lucide-react';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [dark, setDark] = useState(true);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (dark) root.classList.add('dark');
+    else root.classList.remove('dark');
+  }, [dark]);
 
   const navItems = [
     { href: '#about', label: 'About', icon: User },
@@ -16,7 +23,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <a href="#top" className="flex items-center gap-2 group">
             <Rocket className="h-6 w-6 text-cyan-400 drop-shadow-[0_0_8px_#00D9FF]" />
-            <span className="font-semibold tracking-wider text-cyan-300 group-hover:text-white transition">Tech Portfolio</span>
+            <span className="font-semibold tracking-wider text-cyan-300 group-hover:text-white transition">Ruchir • AI</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -32,13 +39,23 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-white/10 text-white hover:border-cyan-400/50 hover:text-cyan-300 transition"
-            aria-label="Toggle navigation"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setDark((d) => !d)}
+              className="hidden md:inline-flex items-center justify-center h-10 w-10 rounded-lg border border-white/10 text-white hover:border-cyan-400/50 hover:text-cyan-300 transition"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode"
+            >
+              {dark ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+            </button>
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-white/10 text-white hover:border-cyan-400/50 hover:text-cyan-300 transition"
+              aria-label="Toggle navigation"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -56,6 +73,13 @@ export default function Navbar() {
                 <span>{item.label}</span>
               </a>
             ))}
+            <button
+              onClick={() => setDark((d) => !d)}
+              className="mt-2 inline-flex items-center justify-center gap-2 w-full rounded-lg border border-white/10 text-white px-3 py-2 hover:border-cyan-400/50 hover:text-cyan-300 transition"
+              aria-label="Toggle dark mode"
+            >
+              {dark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />} Theme
+            </button>
           </div>
         </div>
       )}

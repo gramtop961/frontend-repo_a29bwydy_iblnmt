@@ -16,7 +16,7 @@ function App() {
 
       <footer className="border-t border-white/10 py-8 text-center text-white/60">
         <p>
-          © {new Date().getFullYear()} • Built with a modern tech aesthetic — neon gradients, motion, and 3D.
+          © {new Date().getFullYear()} • Ruchir Hanumant Huchgol — AI Developer & Automation Engineer
         </p>
       </footer>
     </div>
